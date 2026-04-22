@@ -76,7 +76,7 @@ export default function App() {
         "A full-stack SaaS application featuring dynamic dashboards, interactive charts, and real-time user analytics. Optimized backend queries improved response time by 30%, and the app is containerized with Docker.",
       tech: ["React.js", "Spring Boot", "MySQL", "Redux Toolkit", "Docker", "REST APIs"],
       type: "SaaS · Full Stack",
-      github: "https://github.com/sowmya-rm",
+      github: "https://github.com/Sowmyarm24",
       highlights: ["JWT Authentication", "30% faster queries", "Docker deployment"],
     },
     {
@@ -85,7 +85,7 @@ export default function App() {
         "A multi-tenant CMS with role-based content management, drag-and-drop page builder, real-time preview, and a secure multi-stage publishing workflow with approval stages.",
       tech: ["React.js", "TypeScript", "Node.js", "Express.js", "MongoDB"],
       type: "CMS · Full Stack",
-      github: "https://github.com/sowmya-rm",
+      github: "https://github.com/Sowmyarm24",
       highlights: ["Multi-tenant architecture", "Drag & Drop builder", "Approval workflow"],
     },
   ];
@@ -172,7 +172,7 @@ export default function App() {
           </motion.div>
           <motion.div variants={fadeUp} className="hero-socials">
             <a href="https://linkedin.com/in/sowmya-r-m-0aaa283b2" target="_blank" rel="noreferrer" className="social-icon"><FiLinkedin size={18} /></a>
-            <a href="https://github.com/sowmya-rm" target="_blank" rel="noreferrer" className="social-icon"><FiGithub size={18} /></a>
+            <a href="https://github.com/Sowmyarm24" target="_blank" rel="noreferrer" className="social-icon"><FiGithub size={18} /></a>
             <a href="mailto:sowmyarm024@gmail.com" className="social-icon"><FiMail size={18} /></a>
           </motion.div>
         </motion.div>
@@ -198,7 +198,7 @@ export default function App() {
                 <p>I've improved application performance by <strong>up to 40%</strong> through lazy loading, code splitting, and query optimisation. I thrive in Agile environments, care deeply about clean code, and enjoy collaborating with cross-functional teams to ship great products.</p>
                 <p>I hold a <strong>B.E. in Electronics &amp; Communication</strong> from GM Institute of Technology with a CGPA of <strong>8.97/10</strong>, and I've been recognised with the Spotlight Award at Tata Elxsi.</p>
                 <div className="about-tags">
-                  {["React.js", "TypeScript", "Spring Boot", "Node.js", "Redux Toolkit", "MySQL"].map(t => (
+                  {["React.js", "JavaScript", "TypeScript", "Node.js", "Redux Toolkit", "Axios","MySQL"].map(t => (
                     <span key={t} className="about-tag">{t}</span>
                   ))}
                 </div>
@@ -355,7 +355,7 @@ export default function App() {
                 { icon: <FiMail size={22} />, label: "Email", value: "sowmyarm024@gmail.com", href: "mailto:sowmyarm024@gmail.com" },
                 { icon: <FiPhone size={22} />, label: "Phone", value: "+91 88618 83324", href: "tel:+918861883324" },
                 { icon: <FiLinkedin size={22} />, label: "LinkedIn", value: "sowmya-r-m", href: "https://linkedin.com/in/sowmya-r-m-0aaa283b2" },
-                { icon: <FiGithub size={22} />, label: "GitHub", value: "github.com/sowmya-rm", href: "https://github.com/sowmya-rm" },
+                { icon: <FiGithub size={22} />, label: "GitHub", value: "github.com/sowmya-rm", href: "https://github.com/Sowmyarm24" },
               ].map(c => (
                 <a key={c.label} href={c.href} target="_blank" rel="noreferrer" className="contact-card">
                   <span className="contact-card-icon">{c.icon}</span>
@@ -382,7 +382,7 @@ export default function App() {
           <p>Designed &amp; built by Sowmya R M · {new Date().getFullYear()}</p>
           <div className="footer-socials">
             <a href="https://linkedin.com/in/sowmya-r-m-0aaa283b2" target="_blank" rel="noreferrer"><FiLinkedin /></a>
-            <a href="https://github.com/sowmya-rm" target="_blank" rel="noreferrer"><FiGithub /></a>
+            <a href="https://github.com/Sowmyarm24" target="_blank" rel="noreferrer"><FiGithub /></a>
             <a href="mailto:sowmyarm024@gmail.com"><FiMail /></a>
           </div>
         </div>

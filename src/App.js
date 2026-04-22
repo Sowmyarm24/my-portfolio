@@ -159,7 +159,7 @@ export default function App() {
           <motion.p variants={fadeUp} className="hero-role">Full Stack Engineer · Frontend Specialist</motion.p>
           <motion.p variants={fadeUp} className="hero-sub">
             3 years crafting scalable, performant web applications with
-            <strong> React.js</strong>, <strong>Spring Boot</strong> &amp; <strong>Node.js</strong>.
+            <strong> React.js</strong>, <strong>Java</strong> &amp; <strong>Node.js</strong>.
             Based in Bengaluru, India.
           </motion.p>
           <motion.div variants={fadeUp} className="hero-actions">

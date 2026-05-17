@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  FiLinkedin, FiMail, FiPhone, FiExternalLink, FiGithub,
-  FiCode, FiServer, FiDatabase, FiTool, FiMenu, FiX,
+  FiLinkedin, FiMail, FiPhone, FiGithub,
+  FiCode, FiServer, FiTool, FiMenu, FiX,
   FiArrowRight, FiAward, FiBookOpen, FiLayers, FiBox,
   FiZap, FiShield, FiGlobe
 } from "react-icons/fi";

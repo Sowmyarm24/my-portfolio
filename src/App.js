@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FiLinkedin, FiMail, FiPhone, FiExternalLink, FiGithub,
   FiCode, FiServer, FiDatabase, FiTool, FiMenu, FiX,
-  FiArrowRight, FiAward, FiBookOpen, FiLayers
+  FiArrowRight, FiAward, FiBookOpen, FiLayers, FiBox,
+  FiZap, FiShield, FiGlobe
 } from "react-icons/fi";
 import "./App.scss";
 
@@ -47,53 +48,120 @@ export default function App() {
   };
 
   const skills = {
-    Frontend: {
+    "Frontend": {
       icon: <FiCode />,
       color: "violet",
-      items: ["React.js", "TypeScript", "JavaScript ES6+", "Tailwind CSS", "Material UI", "Bootstrap", "HTML5", "CSS3", "Redux Toolkit", "React Query"],
+      items: [
+        "React.js (v18+)", "JavaScript (ES6+)", "TypeScript",
+        "Redux Toolkit (RTK Query)", "React Query", "Context API",
+        "Tailwind CSS", "Material UI (MUI v5)", "SCSS/SASS",
+        "Styled-Components", "React Hook Form", "React Router v6",
+      ],
     },
-    Backend: {
+    "3D & Visual": {
+      icon: <FiBox />,
+      color: "emerald",
+      items: [
+        "Three.js", "WebGL", "React Three Fiber",
+        "Unity WebGL (React bridge)", "3D Model Rendering",
+        "Interactive Visualisation",
+      ],
+    },
+    "Backend & Data": {
       icon: <FiServer />,
       color: "blue",
-      items: ["Java", "Spring Boot", "Node.js", "Express.js", "REST APIs", "JWT Auth", "RBAC", "MVC Architecture"],
-    },
-    Database: {
-      icon: <FiDatabase />,
-      color: "emerald",
-      items: ["MySQL", "PostgreSQL", "MongoDB", "JPA/Hibernate"],
+      items: [
+        "Java", "Spring Boot (basics)", "MySQL",
+        "REST API Design", "GraphQL (Apollo Client)",
+        "WebSockets", "SCORM / xAPI", "Axios",
+      ],
     },
     "Tools & DevOps": {
       icon: <FiTool />,
       color: "amber",
-      items: ["Git", "Docker", "Maven", "Webpack", "Vite", "Postman", "Jest", "React Testing Library"],
+      items: [
+        "AWS (S3, CloudFront, EC2)", "GitHub Actions (CI/CD)",
+        "Docker", "Vite", "Webpack", "Storybook",
+        "Jest", "React Testing Library", "Postman", "Figma",
+      ],
     },
   };
 
   const projects = [
     {
-      title: "Product Analytics Dashboard",
+      title: "Air India Experience Centre",
+      subtitle: "Booking & Slot Management System",
       description:
-        "A full-stack SaaS application featuring dynamic dashboards, interactive charts, and real-time user analytics. Optimized backend queries improved response time by 30%, and the app is containerized with Docker.",
-      tech: ["React.js", "Spring Boot", "MySQL", "Redux Toolkit", "Docker", "REST APIs"],
-      type: "SaaS · Full Stack",
-      github: "https://github.com/Sowmyarm24",
-      highlights: ["JWT Authentication", "30% faster queries", "Docker deployment"],
+        "Enterprise slot reservation platform for Air India handling three booking types — individual walk-in, corporate bulk employee booking, and VIP last-minute bookings that override fully occupied slots via priority business logic. Features a real-time availability calendar, QR code generation, and automated email confirmation.",
+      tech: ["React.js", "TypeScript", "Redux Toolkit", "Tailwind CSS", "REST API", "QR Code", "AWS S3/CloudFront"],
+      type: "Enterprise · Aviation",
+      badge: "Air India",
+      highlights: [
+        "3 booking types with priority override logic",
+        "Real-time slot availability calendar",
+        "QR code + automated email confirmation",
+        "Corporate bulk booking with conflict resolution",
+      ],
+      icon: <FiGlobe />,
+      color: "blue",
     },
     {
-      title: "Content Management System",
+      title: "Digital Asset Management Platform",
+      subtitle: "3D & Multi-Media · International Client",
       description:
-        "A multi-tenant CMS with role-based content management, drag-and-drop page builder, real-time preview, and a secure multi-stage publishing workflow with approval stages.",
-      tech: ["React.js", "TypeScript", "Node.js", "Express.js", "MongoDB"],
-      type: "CMS · Full Stack",
-      github: "https://github.com/Sowmyarm24",
-      highlights: ["Multi-tenant architecture", "Drag & Drop builder", "Approval workflow"],
+        "Secure browser-based DMS for a confidential Japanese enterprise client — deployed on their private on-premise server with isolated MySQL database and no cloud dependency. Integrated Three.js for real-time 3D model rendering alongside video, audio, GIF, and image management, with granular role-based access control.",
+      tech: ["React.js", "JavaScript", "Three.js", "WebGL", "Redux Toolkit", "RBAC", "SCSS", "MySQL", "On-premise"],
+      type: "Enterprise · International Client",
+      badge: "Confidential · Japan",
+      highlights: [
+        "Three.js real-time 3D rendering in browser",
+        "Supports 3D, video, audio, GIF, image assets",
+        "Granular RBAC — per role, asset type, operation",
+        "On-premise deployment, zero cloud dependency",
+      ],
+      icon: <FiBox />,
+      color: "emerald",
+    },
+    {
+      title: "E-Learning & LMS Platform",
+      subtitle: "SCORM / xAPI Integration",
+      description:
+        "Full-featured Learning Management System built from scratch with Admin, Supervisor, and Trainee roles. Integrated Articulate SCORM/xAPI courses by writing custom JavaScript inside the Articulate publishing layer to pass real-time learner data to React. Automated assessment engine, PDF certificate generation with unique verification IDs, and deadline reminder system.",
+      tech: ["React.js", "JavaScript", "Articulate/SCORM", "Redux Toolkit", "React Hook Form", "REST API", "MySQL"],
+      type: "Enterprise · E-Learning",
+      badge: "LMS",
+      highlights: [
+        "Custom SCORM/xAPI ↔ React live data bridge",
+        "3-tier RBAC with per-user permission toggles",
+        "Auto-generated verified PDF certificates",
+        "Deadline reminders at 7, 3, 1 day before due date",
+      ],
+      icon: <FiBookOpen />,
+      color: "amber",
+    },
+    {
+      title: "JioBP 3D Product Viewer",
+      subtitle: "React + Unity WebGL Integration",
+      description:
+        "Interactive 3D product review platform for JioBP — built the complete React application layer with a bidirectional communication bridge between React and a Unity WebGL runtime. Managed all product state, annotation triggers, video/audio playback, and part-level highlight events from the React side via ReactUnityWebGL.",
+      tech: ["React.js", "JavaScript", "Unity WebGL", "ReactUnityWebGL", "Tailwind CSS", "REST API", "AWS S3"],
+      type: "Enterprise · Energy",
+      badge: "JioBP",
+      highlights: [
+        "React ↔ Unity WebGL bidirectional bridge",
+        "3D product annotation and part highlighting",
+        "Video, audio, voiceover orchestration from React",
+        "Dynamic product config without Unity recompilation",
+      ],
+      icon: <FiZap />,
+      color: "violet",
     },
   ];
 
   const stats = [
     { value: "3+", label: "Years experience" },
-    { value: "40%", label: "Performance boost" },
-    { value: "2", label: "Major projects" },
+    { value: "40%", label: "Latency reduced" },
+    { value: "4", label: "Enterprise projects" },
     { value: "2", label: "Awards won" },
   ];
 
@@ -150,16 +218,18 @@ export default function App() {
         </div>
         <motion.div className="hero-content" initial="hidden" animate="visible" variants={stagger}>
           <motion.div variants={fadeUp} className="hero-badge">
-            <span className="badge-dot" /> Available for Frontend roles
+            <span className="badge-dot" /> Open to Frontend Engineer roles
           </motion.div>
           <motion.div variants={fadeUp} className="avatar-wrap">
             <div className="avatar">SR</div>
           </motion.div>
           <motion.h1 variants={fadeUp} className="hero-title">Sowmya R M</motion.h1>
-          <motion.p variants={fadeUp} className="hero-role">Full Stack Engineer · Frontend Specialist</motion.p>
+          <motion.p variants={fadeUp} className="hero-role">Frontend Engineer · React.js Specialist</motion.p>
           <motion.p variants={fadeUp} className="hero-sub">
-            3 years crafting scalable, performant web applications with
-            <strong> React.js</strong>, <strong>Java</strong> &amp; <strong>Node.js</strong>.
+            3 years building enterprise-grade web applications at{" "}
+            <strong>Tata Elxsi</strong> for clients including{" "}
+            <strong>Air India</strong> and <strong>JioBP</strong>.
+            Specialist in <strong>React.js</strong>, <strong>Three.js</strong>, and complex UI architecture.
             Based in Bengaluru, India.
           </motion.p>
           <motion.div variants={fadeUp} className="hero-actions">
@@ -171,12 +241,17 @@ export default function App() {
             </button>
           </motion.div>
           <motion.div variants={fadeUp} className="hero-socials">
-            <a href="https://linkedin.com/in/sowmya-r-m-0aaa283b2" target="_blank" rel="noreferrer" className="social-icon"><FiLinkedin size={18} /></a>
-            <a href="https://github.com/Sowmyarm24" target="_blank" rel="noreferrer" className="social-icon"><FiGithub size={18} /></a>
-            <a href="mailto:sowmyarm024@gmail.com" className="social-icon"><FiMail size={18} /></a>
+            <a href="https://linkedin.com/in/sowmya-r-m-0aaa283b2" target="_blank" rel="noreferrer" className="social-icon" aria-label="LinkedIn"><FiLinkedin size={18} /></a>
+            <a href="https://github.com/Sowmyarm24" target="_blank" rel="noreferrer" className="social-icon" aria-label="GitHub"><FiGithub size={18} /></a>
+            <a href="mailto:sowmyarm024@gmail.com" className="social-icon" aria-label="Email"><FiMail size={18} /></a>
           </motion.div>
         </motion.div>
-        <motion.div className="stats-bar" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6 }}>
+        <motion.div
+          className="stats-bar"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+        >
           {stats.map(s => (
             <div className="stat-item" key={s.label}>
               <span className="stat-value">{s.value}</span>
@@ -194,23 +269,57 @@ export default function App() {
             <motion.h2 variants={fadeUp} className="section-title">Who I am</motion.h2>
             <div className="about-grid">
               <motion.div variants={fadeUp} className="about-text">
-                <p>I'm a <strong>Full Stack Engineer at Tata Elxsi</strong>, Bengaluru, with 3 years of experience building enterprise-grade web applications. While I'm comfortable across the full stack, my passion lies in crafting <strong>exceptional frontend experiences</strong> — pixel-perfect UIs, smooth interactions, and highly optimised React applications.</p>
-                <p>I've improved application performance by <strong>up to 40%</strong> through lazy loading, code splitting, and query optimisation. I thrive in Agile environments, care deeply about clean code, and enjoy collaborating with cross-functional teams to ship great products.</p>
-                <p>I hold a <strong>B.E. in Electronics &amp; Communication</strong> from GM Institute of Technology with a CGPA of <strong>8.97/10</strong>, and I've been recognised with the Spotlight Award at Tata Elxsi.</p>
+                <p>
+                  I'm a <strong>Frontend Engineer at Tata Elxsi</strong>, Bengaluru, with 3 years of experience
+                  delivering production-grade web applications for enterprise clients. My core is{" "}
+                  <strong>React.js and JavaScript</strong>, with production experience in TypeScript,
+                  Three.js-based 3D rendering, Unity WebGL integration, and SCORM-based e-learning systems.
+                </p>
+                <p>
+                  I've worked on genuinely varied and technically complex projects — a slot booking system for{" "}
+                  <strong>Air India</strong>, a 3D product viewer for <strong>JioBP</strong>, a secure digital
+                  asset management platform deployed on a private server for a{" "}
+                  <strong>confidential Japanese enterprise</strong>, and a full LMS with Articulate/SCORM integration.
+                </p>
+                <p>
+                  I care about performance, accessibility, and clean architecture. I've reduced data-fetch
+                  latency by <strong>40%</strong>, improved perceived load time by <strong>45%</strong>, and
+                  mentored junior developers on React and TypeScript best practices. Recognised with the{" "}
+                  <strong>Spotlight Award</strong> and <strong>Customer Appreciation Award</strong> at Tata Elxsi.
+                </p>
                 <div className="about-tags">
-                  {["React.js", "JavaScript", "TypeScript", "Node.js", "Redux Toolkit", "Axios","MySQL"].map(t => (
+                  {[
+                    "React.js", "JavaScript", "TypeScript", "Three.js",
+                    "Redux Toolkit", "SCORM/xAPI", "AWS", "Tailwind CSS",
+                  ].map(t => (
                     <span key={t} className="about-tag">{t}</span>
                   ))}
                 </div>
               </motion.div>
               <motion.div variants={fadeUp} className="about-cards">
                 {[
-                  { icon: <FiAward />, color: "amber", title: "Spotlight Award", sub: "Tata Elxsi – outstanding contribution" },
-                  { icon: <FiAward />, color: "violet", title: "Customer Appreciation Award", sub: "Recognised for exceptional client delivery" },
-                  { icon: <FiBookOpen />, color: "blue", title: "Angular – The Complete Guide", sub: "Udemy Certification" },
-                  { icon: <FiCode />, color: "emerald", title: "CGPA 8.97 / 10", sub: "B.E. Electronics & Communication · 2022" },
+                  {
+                    icon: <FiAward />, color: "amber",
+                    title: "Spotlight Award",
+                    sub: "Tata Elxsi — technical excellence & delivery impact",
+                  },
+                  {
+                    icon: <FiAward />, color: "violet",
+                    title: "Customer Appreciation Award",
+                    sub: "Tata Elxsi — outstanding client-facing contributions",
+                  },
+                  {
+                    icon: <FiShield />, color: "blue",
+                    title: "AWS Cloud Practitioner",
+                    sub: "Amazon Web Services Certification",
+                  },
+                  {
+                    icon: <FiCode />, color: "emerald",
+                    title: "CGPA 8.97 / 10",
+                    sub: "B.E. Electronics & Communication · 2022",
+                  },
                 ].map((card, i) => (
-                  <div className={`info-card`} key={i}>
+                  <div className="info-card" key={i}>
                     <span className={`info-icon ${card.color}`}>{card.icon}</span>
                     <div>
                       <h4>{card.title}</h4>
@@ -230,7 +339,9 @@ export default function App() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.div variants={fadeUp} className="section-label"><FiCode size={14} /> Technical skills</motion.div>
             <motion.h2 variants={fadeUp} className="section-title">What I work with</motion.h2>
-            <motion.p variants={fadeUp} className="section-sub">A focused set of technologies I use daily to build production-grade applications.</motion.p>
+            <motion.p variants={fadeUp} className="section-sub">
+              A focused set of technologies I use daily to build production-grade enterprise applications.
+            </motion.p>
             <div className="skills-grid">
               {Object.entries(skills).map(([category, data]) => (
                 <motion.div key={category} variants={fadeUp} className={`skill-card color-${data.color}`}>
@@ -239,7 +350,9 @@ export default function App() {
                     <h3>{category}</h3>
                   </div>
                   <div className="skill-tags">
-                    {data.items.map(skill => <span key={skill} className="skill-tag">{skill}</span>)}
+                    {data.items.map(skill => (
+                      <span key={skill} className="skill-tag">{skill}</span>
+                    ))}
                   </div>
                 </motion.div>
               ))}
@@ -260,24 +373,27 @@ export default function App() {
                 <div className="timeline-card">
                   <div className="timeline-header">
                     <div>
-                      <h3>Full Stack Engineer</h3>
+                      <h3>Frontend Engineer</h3>
                       <p className="company">Tata Elxsi · Bengaluru, India</p>
                     </div>
                     <div className="timeline-right">
-                      <span className="period">2023 – Present</span>
+                      <span className="period">Jan 2023 – Present</span>
                       <span className="current-badge">Current</span>
                     </div>
                   </div>
                   <ul className="exp-points">
                     {[
-                      "Developed scalable enterprise web applications using React.js, Java (Spring Boot), and Node.js.",
-                      "Designed and implemented RESTful APIs for CRUD operations and complex business workflows.",
-                      "Integrated MySQL/PostgreSQL databases with backend services using JPA/Hibernate.",
-                      "Implemented JWT-based authentication and role-based authorization (RBAC).",
-                      "Built reusable, accessible frontend components in React.js + TypeScript following component-driven architecture.",
-                      "Managed client and server state using Redux Toolkit and React Query.",
-                      "Improved application performance by ~40% using lazy loading, optimised queries, and efficient API handling.",
-                      "Participated in API design discussions, database schema design, and peer code reviews.",
+                      "Delivered frontend development across 4 enterprise client projects — Air India, JioBP, and international clients — spanning booking systems, digital asset management, 3D product visualisation, and e-learning platforms.",
+                      "Integrated Three.js with React.js to power real-time in-browser 3D model rendering across a multi-content digital asset management platform supporting 3D, video, audio, GIF, and image assets.",
+                      "Built a React-to-Unity WebGL communication bridge for JioBP's 3D product viewer — managing bidirectional data passing between React and the Unity WebGL runtime via ReactUnityWebGL.",
+                      "Designed a complex slot booking and calendar system for Air India handling individual, corporate bulk, and VIP-priority bookings with QR code generation and automated email confirmation.",
+                      "Built a full LMS with Articulate SCORM/xAPI integration — wrote custom JavaScript inside the Articulate publishing layer to pass real-time learner data between CBT courses and React.",
+                      "Reduced client-side data-fetch latency by 40% using Redux Toolkit (RTK Query) with tag-based cache invalidation and optimistic updates across 8 dashboard modules.",
+                      "Improved perceived load time by 45% via lazy-loaded routing with React.Suspense, skeleton screens, and react-window virtualisation — achieving sub-2s LCP and 90+ Lighthouse scores.",
+                      "Configured AWS S3 + CloudFront for static delivery; managed on-premise deployments for confidential enterprise clients with isolated database environments.",
+                      "Collaborated with Java Spring Boot backend teams on REST API design — reduced payload sizes by 30% by moving aggregations to the database layer.",
+                      "Maintained >80% Jest + React Testing Library test coverage; published 50+ reusable components via Storybook adopted across multiple product teams.",
+                      "Mentored 2 junior developers on React.js, JavaScript, and TypeScript best practices through structured code reviews and pair programming.",
                     ].map((point, j) => (
                       <li key={j}><span className="point-dot" />{point}</li>
                     ))}
@@ -295,24 +411,31 @@ export default function App() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.div variants={fadeUp} className="section-label"><FiLayers size={14} /> Projects</motion.div>
             <motion.h2 variants={fadeUp} className="section-title">What I've built</motion.h2>
-            <motion.p variants={fadeUp} className="section-sub">End-to-end applications built with production quality in mind.</motion.p>
+            <motion.p variants={fadeUp} className="section-sub">
+              Enterprise-grade applications built at Tata Elxsi for real clients with complex requirements.
+            </motion.p>
             <div className="projects-grid">
               {projects.map(project => (
-                <motion.div key={project.title} variants={fadeUp} className="project-card">
+                <motion.div key={project.title} variants={fadeUp} className={`project-card project-color-${project.color}`}>
                   <div className="project-top">
-                    <span className="project-type">{project.type}</span>
-                    <div className="project-links">
-                      <a href={project.github} target="_blank" rel="noreferrer" className="project-link"><FiGithub size={16} /></a>
-                      {project.live && <a href={project.live} target="_blank" rel="noreferrer" className="project-link"><FiExternalLink size={16} /></a>}
+                    <div className="project-top-left">
+                      <span className={`project-icon-wrap color-${project.color}`}>{project.icon}</span>
+                      <span className="project-type">{project.type}</span>
                     </div>
+                    <span className="project-badge">{project.badge}</span>
                   </div>
                   <h3 className="project-title">{project.title}</h3>
+                  <p className="project-subtitle">{project.subtitle}</p>
                   <p className="project-desc">{project.description}</p>
                   <div className="project-highlights">
-                    {project.highlights.map(h => <span key={h} className="highlight-tag">✓ {h}</span>)}
+                    {project.highlights.map(h => (
+                      <span key={h} className="highlight-tag">✓ {h}</span>
+                    ))}
                   </div>
                   <div className="project-tech">
-                    {project.tech.map(t => <span key={t} className="tech-tag">{t}</span>)}
+                    {project.tech.map(t => (
+                      <span key={t} className="tech-tag">{t}</span>
+                    ))}
                   </div>
                 </motion.div>
               ))}
@@ -337,6 +460,22 @@ export default function App() {
                 <span className="cgpa-badge">CGPA: 8.97 / 10</span>
               </div>
             </motion.div>
+            <motion.div variants={fadeUp} className="cert-grid">
+              {[
+                { title: "Java Full Stack Development", org: "KodNext" },
+                { title: "React – The Complete Guide", org: "Udemy" },
+                { title: "Angular – The Complete Guide", org: "Udemy" },
+                { title: "AWS Cloud Practitioner Essentials", org: "Amazon Web Services" },
+              ].map((cert, i) => (
+                <div className="cert-card" key={i}>
+                  <FiAward size={16} />
+                  <div>
+                    <p className="cert-title">{cert.title}</p>
+                    <p className="cert-org">{cert.org}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -344,18 +483,25 @@ export default function App() {
       {/* Contact */}
       <section className="section contact-section" id="contact">
         <div className="container">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="contact-inner">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="contact-inner"
+          >
             <motion.div variants={fadeUp} className="section-label centered"><FiMail size={14} /> Contact</motion.div>
             <motion.h2 variants={fadeUp} className="section-title centered">Let's work together</motion.h2>
             <motion.p variants={fadeUp} className="section-sub centered">
-              I'm actively looking for <strong>frontend-focused</strong> roles. If you have an exciting opportunity or just want to say hi, my inbox is always open.
+              I'm actively looking for <strong>senior frontend engineer</strong> roles. If you have an
+              exciting opportunity or just want to say hi, my inbox is always open.
             </motion.p>
             <motion.div variants={fadeUp} className="contact-cards">
               {[
                 { icon: <FiMail size={22} />, label: "Email", value: "sowmyarm024@gmail.com", href: "mailto:sowmyarm024@gmail.com" },
                 { icon: <FiPhone size={22} />, label: "Phone", value: "+91 88618 83324", href: "tel:+918861883324" },
                 { icon: <FiLinkedin size={22} />, label: "LinkedIn", value: "sowmya-r-m", href: "https://linkedin.com/in/sowmya-r-m-0aaa283b2" },
-                { icon: <FiGithub size={22} />, label: "GitHub", value: "github.com/sowmya-rm", href: "https://github.com/Sowmyarm24" },
+                { icon: <FiGithub size={22} />, label: "GitHub", value: "Sowmyarm24", href: "https://github.com/Sowmyarm24" },
               ].map(c => (
                 <a key={c.label} href={c.href} target="_blank" rel="noreferrer" className="contact-card">
                   <span className="contact-card-icon">{c.icon}</span>
@@ -379,11 +525,11 @@ export default function App() {
       <footer className="footer">
         <div className="container footer-inner">
           <span className="logo">Sowmya<span className="logo-dot">.</span></span>
-          <p>Designed &amp; built by Sowmya R M · {new Date().getFullYear()}</p>
+          <p>Frontend Engineer · React.js Specialist · Bengaluru, India · {new Date().getFullYear()}</p>
           <div className="footer-socials">
-            <a href="https://linkedin.com/in/sowmya-r-m-0aaa283b2" target="_blank" rel="noreferrer"><FiLinkedin /></a>
-            <a href="https://github.com/Sowmyarm24" target="_blank" rel="noreferrer"><FiGithub /></a>
-            <a href="mailto:sowmyarm024@gmail.com"><FiMail /></a>
+            <a href="https://linkedin.com/in/sowmya-r-m-0aaa283b2" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin /></a>
+            <a href="https://github.com/Sowmyarm24" target="_blank" rel="noreferrer" aria-label="GitHub"><FiGithub /></a>
+            <a href="mailto:sowmyarm024@gmail.com" aria-label="Email"><FiMail /></a>
           </div>
         </div>
       </footer>

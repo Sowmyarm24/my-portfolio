@@ -874,3 +874,128 @@ ul { list-style: none; }
   0%, 100% { box-shadow: 0 0 0 2px rgba(#10b981, 0.25); }
   50% { box-shadow: 0 0 0 5px rgba(#10b981, 0.1); }
 }
+
+// ─────────────────────────────────────────────
+// PORTFOLIO SCSS ADDITIONS
+// Add these to your existing App.scss file
+// ─────────────────────────────────────────────
+
+// ── Project card updates ─────────────────────
+
+.project-card {
+  .project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+
+    .project-top-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-icon-wrap {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+
+      &.color-blue    { background: #e8f1fd; color: #185FA5; }
+      &.color-emerald { background: #e1f5ee; color: #0F6E56; }
+      &.color-amber   { background: #faeeda; color: #854F0B; }
+      &.color-violet  { background: #eeedfe; color: #534AB7; }
+    }
+
+    .project-badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: #f1f0fb;
+      color: #534AB7;
+      white-space: nowrap;
+    }
+  }
+
+  .project-subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    margin: -4px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+}
+
+// ── Certifications grid ───────────────────────
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cert-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  transition: box-shadow 0.2s;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #7F77DD;
+  }
+
+  .cert-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+  }
+
+  .cert-org {
+    font-size: 12px;
+    color: #888;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  }
+}
+
+// ── Dark mode cert card ───────────────────────
+
+@media (prefers-color-scheme: dark) {
+  .cert-card {
+    background: #1e1e2e;
+    border-color: #2a2a3a;
+
+    .cert-title { color: #f0f0f0; }
+    .cert-org   { color: #888; }
+  }
+
+  .project-card {
+    .project-icon-wrap {
+      &.color-blue    { background: #0c2240; color: #85B7EB; }
+      &.color-emerald { background: #042c1e; color: #5DCAA5; }
+      &.color-amber   { background: #2a1a05; color: #EF9F27; }
+      &.color-violet  { background: #1a1540; color: #AFA9EC; }
+    }
+
+    .project-badge {
+      background: #1e1a3a;
+      color: #AFA9EC;
+    }
+  }
+}
